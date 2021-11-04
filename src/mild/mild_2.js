@@ -6,7 +6,7 @@
  * returns: { type: 'number', value: 4 }
  */
 export function identifyVariable(variable) {
-
+   return typeof variable;
 }
 
 
@@ -24,7 +24,25 @@ export function identifyVariable(variable) {
 
  */
 export function identifyArray(array) {
-
+   let i = 0;
+   let identify_array = []; /* maybe turn this back to curly*/
+   while(i < array.length){
+      let element = []; /*maybe make this curly too*/
+      element["type"] = typeof array[i];
+      element["value"] = array[i];
+      identify_array[i] = element;
+      /*if(!(array[i] in identify_array)){
+         identify_array.array[i] = typeof array[i];
+      }*/
+      i++;
+   }
+   /*let keys = identify_array.keys();
+   let i = 0;
+   while (i < keys.length){
+      console.log("type:  " + identify_array.keys[i] + " , value: " + keys[i]) /* might want to add curly brackets to print or just make each in the array an individual array so you can just print it like you were thinking before
+      i++;
+   }*/
+   return identify_array; /*change this to it returns an array, this is wrong
 }
 
 /**
