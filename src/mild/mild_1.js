@@ -9,7 +9,8 @@
  * see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
  */
 export function sumToString(a, b) {
-
+    let sum = a+b;
+    return sum.toString;
 }
 
 
@@ -24,7 +25,14 @@ export function sumToString(a, b) {
  *
  */
 export function getIncreasingArray(startNumber, endNumber) {
-
+    const increasing_array = [];
+    let i = 0;
+    let n = endNumber - startNumber;
+    while( i <= n){
+        increasing_array[i] = i + startNumber;
+        i++;
+    }
+    return increasing_array;
 }
 
 /**
@@ -35,7 +43,22 @@ export function getIncreasingArray(startNumber, endNumber) {
  * and https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
  */
 export function maxAndMin(numbers) {
-
+    if(numbers.length == 0){
+        return;             /*idk if this is what I should do in this case or if it even works*/
+    }
+    let mini = numbers[0];
+    let maxi = numbers[0];
+    let i = 1;
+    while(i < numbers.length){
+        if(numbers[i] < mini){
+            mini = numbers[i];
+        }
+        if(numbers[i] > maxi){
+            maxi = numbers[i];
+        }
+        i++;
+    }
+    return {min: mini, max: maxi};
 }
 
 /**
@@ -49,5 +72,20 @@ export function maxAndMin(numbers) {
  *
  */
 export function countArray(array) {
-
+    const count_array = [];
+    let i = 0;
+    let n = 0;
+    /*iterate through the array. If the element is not in the county array, add a key and assign the key 1 as it shows
+    up once. If it is already in the county array, add 1 to it's value*/
+    while(i < array.length){ 
+        if (!(array[i] in count_array)){
+            count_array[array[i]] = 1; /*not sure if I need to make array[i] a string or not*/
+            n++;
+        }
+        else{
+            count_array[array[i]]++;
+        }
+        i++;
+    }
+    return count_array;
 }
