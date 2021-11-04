@@ -42,7 +42,7 @@ export function identifyArray(array) {
       console.log("type:  " + identify_array.keys[i] + " , value: " + keys[i]) /* might want to add curly brackets to print or just make each in the array an individual array so you can just print it like you were thinking before
       i++;
    }*/
-   return identify_array; /*change this to it returns an array, this is wrong
+   return identify_array; /*change this to it returns an array, this is wrong*/
 }
 
 /**
