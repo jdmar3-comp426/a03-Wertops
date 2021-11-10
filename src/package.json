@@ -5,7 +5,8 @@
   "main": "main.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "mild_1": "node src/mild/mild_1.js"
   },
   "author": "Ella Carter and John Martin",
   "license": "ISC",

@@ -1,10 +1,10 @@
 /* Welcome to my Main Testing File!*/
 
 /*mild_1 tests*/
-import sumToString from "./mild/mild_1";
-import getIncreasingArray from "./mild/mild_1";
-import maxandMin from "./mild/mild_1";
-import countArray from "./mild/mild_1";
+import {sumToString} from "./mild/mild_1";
+import {getIncreasingArray} from "./mild/mild_1";
+import {maxandMin} from "./mild/mild_1";
+import {countArray} from "./mild/mild_1";
 
 
 console.log(sumToString(3,4));

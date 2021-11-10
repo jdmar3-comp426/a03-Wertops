@@ -10,7 +10,7 @@
  */
 export function sumToString(a, b) {
     let sum = a+b;
-    return sum.toString;
+    return sum.toString();
 }
 
 
@@ -93,4 +93,17 @@ export function countArray(array) {
     return count_array;
 }
 
+/*tests */
+console.log(sumToString(3,4));
+console.log(sumToString(0,19));
+
+console.log(getIncreasingArray(3,8));
+console.log(getIncreasingArray(0,6));
+
+console.log(maxAndMin([1,2,3,4,5,6,7]));
+console.log(maxAndMin([33,2,47,17,18,14,0]));
+
+console.log(countArray([0,3,2,0,0,2]));
+console.log(countArray([]));
+console.log(countArray([55,2,55,0,1,1,1,1,55,1]));
 
