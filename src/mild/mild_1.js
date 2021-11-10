@@ -26,6 +26,9 @@ export function sumToString(a, b) {
  */
 export function getIncreasingArray(startNumber, endNumber) {
     const increasing_array = [];
+    if(startNumber >= endNumber){
+        return increasing_array;
+    }
     let i = 0;
     let n = endNumber - startNumber;
     while( i <= n){
@@ -89,3 +92,5 @@ export function countArray(array) {
     }
     return count_array;
 }
+
+

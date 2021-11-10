@@ -1,0 +1,16 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "a03",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ella Carter and John Martin",
+  "license": "ISC",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "node": "^16.13.0"
+  }
+}
