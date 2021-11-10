@@ -1,3 +1,5 @@
+import { parse } from "path/posix";
+
 /**
  *
  * @param {number} a
@@ -61,6 +63,8 @@ export function maxAndMin(numbers) {
         }
         i++;
     }
+    parseInt(mini);
+    parseInt(maxi);
     return {min:mini, max:maxi};
 }
 
