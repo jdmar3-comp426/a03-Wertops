@@ -93,7 +93,7 @@ export function countArray(array) {
     return count_array;
 }
 
-/*tests */
+/*tests 
 console.log(sumToString(3,4));
 console.log(sumToString(0,19));
 
@@ -105,5 +105,5 @@ console.log(maxAndMin([33,2,47,17,18,14,0]));
 
 console.log(countArray([0,3,2,0,0,2]));
 console.log(countArray([]));
-console.log(countArray([55,2,55,0,1,1,1,1,55,1]));
+console.log(countArray([55,2,55,0,1,1,1,1,55,1]));*/
 
