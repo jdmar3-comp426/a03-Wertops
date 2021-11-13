@@ -112,7 +112,7 @@ export function removeKeys(object, keyList) {
    return copy;
 }
 
-/*testing 1 2 3*/
+/*testing 1 2 3
 console.log(identifyVariable(15));
 console.log(identifyVariable("hello"));
 console.log(identifyArray(['some', 44, [33, 24]]));
@@ -123,5 +123,5 @@ removeKey(test_object, "gender")
 console.log(test_object);
 console.log(removeKeyNonDestructive(test_object, "name"));
 console.log(removeKeys({"name" : "Ella", "gender" : "other", "age" : 22, "eye_color" : "hazel"}, ["gender", "eye_color"]));
-
+*/
 

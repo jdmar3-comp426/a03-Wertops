@@ -102,7 +102,7 @@ export function countArray(array){
 
 /*tests 
 console.log(sumToString(3,4));
-console.log(sumToString(0,19));*/
+console.log(sumToString(0,19));
 
 console.log(getIncreasingArray(3,8));
 console.log(getIncreasingArray(0,6));
@@ -112,7 +112,7 @@ console.log(maxAndMin([33,2,47,17,18,14,0]));
 
 console.log(countArray([0,3,2,0,0,2]));
 console.log(countArray([])); /*this works the rest are resultin in empty items*/
-console.log(countArray([55,2,55,0,1,1,1,1,55,1]));
+//console.log(countArray([55,2,55,0,1,1,1,1,55,1]));
 
 /*{ '13': 2, '14': 2, '16': 3, '17': 1, '18': 1, '21': 1 }%0AActual:%0A
 [ <13 empty items>, 2, 2, <1 empty item>, 3, 1, 1, <2 empty items>, 1 ]*/
