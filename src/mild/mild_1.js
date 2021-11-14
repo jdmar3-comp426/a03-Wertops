@@ -12,7 +12,9 @@
  */
 export function sumToString(a, b) {
     let sum = a+b;
-    return sum.toString();
+    //let string = '%d + %d = %d', a, b, sum;
+    return(a + " + " + b + " = " + sum);
+    //return sum.toString();
 }
 
 
@@ -66,7 +68,7 @@ export function maxAndMin(numbers) {
     /*need to figure out how to turn mini and maxi into strings*/
     let minim = parseInt(mini);
     let maxim = parseInt(maxi);
-    return {min:minim, max:maxim};
+    return {max:maxim, min:minim};
 }
 
 /**
@@ -100,10 +102,10 @@ export function countArray(array){
     return count_array;
 }
 
-/*tests 
+/*tests */
 console.log(sumToString(3,4));
 console.log(sumToString(0,19));
-
+/*
 console.log(getIncreasingArray(3,8));
 console.log(getIncreasingArray(0,6));
 
