@@ -114,30 +114,30 @@ export const allCarStats = {
  * }
  */
 export const moreStats = {
-    makerHybrids: mpg_data.reduce(
+    makerHybrids: 0/*mpg_data.reduce(
         function(hybrids, obj){
             if(obj.hybrid){ //if a hybrid is found
-                if(hybrids.length == 0)){                            //check when you come back
+                if(hybrids.length == 0){ //check when you come back
                     hybrids.push({"make": obj.make, "hybrids": mpg_data.filter(car => car.make == obj.make && car.hybrid)});
                 }
                 else{ //if there are already items in the hybrids list
                     if(hybrids.find(car => car.make == obj.make) == undefined){ //if this make isn't in the list already. May want to change to array.some
-                        hybrids.push("make": obj.make, "hybrids": mpg_data.filter(car => car.make == obj.make && car.hybrid);
+                        hybrids.push({"make": obj.make, "hybrids": mpg_data.filter(car => car.make == obj.make && car.hybrid)});
                     }
                 }
             }
-        },[]),
+        },[])*/,
 
-    avgMpgByYearAndHybrid: mpg_data.reduce(function(year_data, obj){
+    avgMpgByYearAndHybrid: 0/*mpg_data.reduce(function(year_data, obj){
         let car_years = mpg_data.reduce(function(years, car){ //making a list of all years
-            if(!(car.year in years)){
-                years.push(car.year); //add the year to the list of all years
-            }
+            //if(!(years.includes(car.year))){
+            years.push(car.year); //add the year to the list of all years
+            //}
         }, [])
         car_years.foreach(year => //for each year that a car is made
             //let year_data[year] = {hybrid: {city: 0, highway: 0}, notHybrid: {city: 0, highway: 0}};
             year_data[year] = mpg_data.reduce(function(yearly_mpg, obj){ //change variables here to match reduce
-                let yearly_mpg = {hybrid: {city: 0, highway: 0}, notHybrid: {city: 0, highway: 0}};
+                yearly_mpg = {hybrid: {city: 0, highway: 0}, notHybrid: {city: 0, highway: 0}};
                 if(obj.year == year){ //if car is made in the target year
                     if(obj.hybrid){
                         yearly_mpg.hybrid.city += obj.city_mpg;
@@ -150,11 +150,11 @@ export const moreStats = {
                 }
             }, {})
         );
-    }, {})
+    }, {})*/
 };
 
 //tests
 
 //console.log(allCarStats.allYearStats);
 //console.log(allCarStats.ratioHybrids);
-console.log(allCarStats.avgMpg);
+//console.log(allCarStats.avgMpg);

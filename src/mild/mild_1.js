@@ -103,8 +103,8 @@ export function countArray(array){
 }
 
 /*tests */
-console.log(sumToString(3,4));
-console.log(sumToString(0,19));
+//console.log(sumToString(3,4));
+//console.log(sumToString(0,19));
 /*
 console.log(getIncreasingArray(3,8));
 console.log(getIncreasingArray(0,6));
