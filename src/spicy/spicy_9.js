@@ -99,8 +99,8 @@ export const tenTimesFifty = () => {
  *    everyEven([1, 5, 1, 0, 1], x => x === 1)  <--  returns true
  *    everyEven([1, 1, 0, 1, 1], x => x === 1)  <--  returns false
  */
-export const everyEven = (arr, test) => {}
- /*   let i = 0;
+export const everyEven = (arr, test) => {
+    let i = 0;
     while(i < arr.length){
         if(!test(arr[i])){
             return false;
@@ -108,7 +108,7 @@ export const everyEven = (arr, test) => {}
         i += 2;
     }
     return true;
-};*/
+};
 
 
 /**
@@ -130,8 +130,8 @@ export const everyEven = (arr, test) => {}
  *    someEven([1, 1, 1, 1, 0], x => x === 0)  <--  returns true
  *    someEven([0, 0, 0, 0, 0], x => x === 0)  <--  returns true
  */
-export const someEven = (arr, test) => {}
-/*    let i = 0;
+export const someEven = (arr, test) => {
+    let i = 0;
     while(i < arr.length){
         if(test(arr[i])){
             return true;
@@ -139,7 +139,7 @@ export const someEven = (arr, test) => {}
         i += 2;
     }
     return false;
-};*/
+};
 
 
 /**
@@ -190,7 +190,7 @@ export const allEvensAreOdd = (arr) => {
         }
         return false;
     }
-    return everyEven(isOdd, arr);
+    return everyEven(arr, isOdd);
 };
 
 
@@ -206,7 +206,7 @@ export const anEvenIsOdd = (arr) => {
         }
         return false;
     }
-    return someEven(isOdd, arr);
+    return someEven(arr, isOdd);
 };
 
 
@@ -243,9 +243,9 @@ const testy = function(number){
 //console.log(multiplyBy()); //good
 //console.log(tenTimes(4)); //good
 //console.log(tenTimesFifty()); //good
-//console.log(everyEven([2, 4, 5, 7, 9, 3], testy)); 
-//console.log(someEven([2, 4, 5, 7, 9, 3], testy));
+//console.log(everyEven([2, 4, 5, 7, 9, 3], testy)); //good
+//console.log(someEven([2, 4, 5, 7, 9, 3], testy)); //good
 //console.log(filter([2, 4, 5, 7, 9, 3], testy)); //good
-//console.log(allEvensAreOdd([2, 4, 5, 7, 9, 3]));
-//console.log(anEvenIsOdd([2, 4, 5, 7, 9, 3]));
+//console.log(allEvensAreOdd([2, 4, 5, 7, 9, 3])); //good
+//console.log(anEvenIsOdd([2, 4, 5, 7, 9, 3])); //good
 //console.log(hasExactly([2, 4, 5, 7, 9, 3], testy, 3)); //good
