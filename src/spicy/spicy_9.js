@@ -14,8 +14,15 @@
  * @return        Returns an array containing the return values obtained
  *                from calling the function
  */
-export const repeat = (fn, n, ...params) => {
 
+export const repeat = (fn, n, ...params) => {
+    let i = 0;
+    let returny = [];
+    while(i < n){
+        returny.push(fn(...params));
+        i++;
+    }
+    return returny;
 };
 
 
@@ -24,6 +31,10 @@ export const repeat = (fn, n, ...params) => {
  *   10 times.
  */
 export const repeatDemo = () => {
+    function hello(){
+        console.log("Hello, world!");
+    }
+    repeat(hello, 10);
 
 };
 
@@ -41,7 +52,10 @@ export const repeatDemo = () => {
  *   product of num1 and num2.
  */
 export const multiplyBy = (num1) => {
-
+    const multi_other = function(num2){
+        return num1 * num2;
+    }
+    return multi_other;
 };
 
 
@@ -49,7 +63,7 @@ export const multiplyBy = (num1) => {
  * Use the multiplyBy function to create and export a function named
  *   "tenTimes" that multiplies a number by 10.
  */
-export const tenTimes = undefined;
+export const tenTimes = multiplyBy(10);
 
 
 /**
@@ -57,7 +71,8 @@ export const tenTimes = undefined;
  *   function to multiply 50 by 10 and returns the result.
  */
 export const tenTimesFifty = () => {
-
+    const ten = tenTimes;
+    return ten(50);
 };
 
 
@@ -85,7 +100,14 @@ export const tenTimesFifty = () => {
  *    everyEven([1, 1, 0, 1, 1], x => x === 1)  <--  returns false
  */
 export const everyEven = (arr, test) => {
-
+    let i = 0;
+    while(i < arr.length){
+        if(!test(arr[i])){
+            return false;
+        }
+        i += 2;
+    }
+    return true;
 };
 
 
@@ -109,7 +131,14 @@ export const everyEven = (arr, test) => {
  *    someEven([0, 0, 0, 0, 0], x => x === 0)  <--  returns true
  */
 export const someEven = (arr, test) => {
-
+    let i = 0;
+    while(i < arr.length){
+        if(test(arr[i])){
+            return true;
+        }
+        i += 2;
+    }
+    return false;
 };
 
 
@@ -135,7 +164,17 @@ export const someEven = (arr, test) => {
  *       -->  { pass: [1, 5, 31], fail: [90] }
  */
 export const filter = (arr, test) => {
-
+    let results = {pass: [], fail: []};
+    let i = 0;
+    arr.forEach(function(element){
+        if(test(element)){
+            results.pass.push(element);
+        }
+        else{
+            results.fail.push(element);
+        }
+    })
+    return results;
 };
 
 
@@ -145,7 +184,13 @@ export const filter = (arr, test) => {
  *   odd numbers. Use the "everyEven" function in this function.
  */
 export const allEvensAreOdd = (arr) => {
-
+    const isOdd = function(num){
+        if(num % 2 == 1){
+            return true;
+        }
+        return false;
+    }
+    return everyEven(arr, isOdd);
 };
 
 
@@ -155,7 +200,13 @@ export const allEvensAreOdd = (arr) => {
  *   array is an odd number. Use the "someEven" function in this function.
  */
 export const anEvenIsOdd = (arr) => {
-
+    const isOdd = function(num){
+        if(num % 2 == 1){
+            return true;
+        }
+        return false;
+    }
+    return someEven(arr, isOdd);
 };
 
 
@@ -166,5 +217,35 @@ export const anEvenIsOdd = (arr) => {
  *   pass the test. You must use the filter function.
  */
 export const hasExactly = (arr, test, n) => {
-
+    let sorty = filter(arr, test);
+    if(sorty.pass.length == n){
+        return true;
+    }
+    return false;
 };
+
+//tests
+//do tests and commit when you get back
+//completely uninstall and reinstall npm and node and ask for a99 progress when you start on this again
+const talk = function(stringy){
+    console.log(stringy);
+}
+const testy = function(number){
+    if(number < 6){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+//console.log(repeat(talk,3,"hello")); //good
+//console.log(repeatDemo());
+//console.log(multiplyBy()); //good
+//console.log(tenTimes(4)); //good
+//console.log(tenTimesFifty()); //good
+//console.log(everyEven([2, 4, 5, 7, 9, 3], testy)); //good
+//console.log(someEven([2, 4, 5, 7, 9, 3], testy)); //good
+//console.log(filter([2, 4, 5, 7, 9, 3], testy)); //good
+//console.log(allEvensAreOdd([2, 4, 5, 7, 9, 3])); //good
+//console.log(anEvenIsOdd([2, 4, 5, 7, 9, 3])); //good
+//console.log(hasExactly([2, 4, 5, 7, 9, 3], testy, 3)); //good

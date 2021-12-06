@@ -6,7 +6,10 @@
  * returns: { type: 'number', value: 4 }
  */
 export function identifyVariable(variable) {
-
+   let v_def = {};
+   v_def.type = typeof variable;
+   v_def.value = variable;
+   return v_def;
 }
 
 
@@ -24,7 +27,13 @@ export function identifyVariable(variable) {
 
  */
 export function identifyArray(array) {
-
+   let identify_array = [];
+   let i = 0;
+   while(i < array.length){
+      identify_array[i] = identifyVariable(array[i]);
+      i++;
+   }
+   return identify_array;
 }
 
 /**
@@ -44,7 +53,7 @@ export function identifyArray(array) {
  obj now does not contain the `password` field
  */
 export function removeKey(object, key) {
-
+   delete object[key];
 }
 
 /**
@@ -64,7 +73,10 @@ export function removeKey(object, key) {
  If only `removeKeyNonDestructive` was called, nothing would have changed.
  */
 export function removeKeyNonDestructive(object, key) {
-
+   let copy = {};
+   Object.assign(copy, object);
+   delete copy[key];
+   return copy;
 }
 
 /**
@@ -89,5 +101,27 @@ export function removeKeyNonDestructive(object, key) {
  * @return {*} The object with its keys removed.
  */
 export function removeKeys(object, keyList) {
+   let i = 0;
+   let copy = {};
+   Object.assign(copy, object);
 
+   while(i < keyList.length){
+      delete copy[keyList[i]];
+      i++
+   }
+   return copy;
 }
+
+/*testing 1 2 3
+console.log(identifyVariable(15));
+console.log(identifyVariable("hello"));
+console.log(identifyArray(['some', 44, [33, 24]]));
+console.log(identifyArray([]));
+
+let test_object = {"name" : "Ella", "gender" : "other", "age" : 22, "eye_color" : "hazel"};
+removeKey(test_object, "gender")
+console.log(test_object);
+console.log(removeKeyNonDestructive(test_object, "name"));
+console.log(removeKeys({"name" : "Ella", "gender" : "other", "age" : 22, "eye_color" : "hazel"}, ["gender", "eye_color"]));
+*/
+
